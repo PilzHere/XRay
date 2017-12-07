@@ -11,10 +11,7 @@ import controllers.XrayController;
 public class BIOS {
 
 //	These strings are collected by XrayController.
-	public String biosName;
-	public String biosManufacturer;
-	public String biosReleasedate;
-	public String biosVersion;
+	public String biosName, biosManufacturer, biosReleasedate, biosVersion;
 	
 	/**
 	 * Sets all BIOS data.
@@ -30,11 +27,6 @@ public class BIOS {
 		biosVersion = XrayController.helper.stringIsEmptyOrUnknownOrNull(biosVersion);
 		
 		biosReleasedate = XrayController.SysInf.getHardware().getComputerSystem().getFirmware().getReleaseDate().toString();
-		biosReleasedate = XrayController.helper.stringIsEmptyOrUnknownOrNull(biosReleasedate);		
-		
-//		Unused / not sure about these yet...
-//		System.out.println(SysInf.getHardware().getComputerSystem().getModel());
-//		System.out.println(SysInf.getHardware().getComputerSystem().getSerialNumber());
-//		System.out.println(SysInf.getHardware().getComputerSystem().getFirmware().getDescription()); // Bios version.
+		biosReleasedate = XrayController.helper.stringIsEmptyOrUnknownOrNull(biosReleasedate);
 	}
 }

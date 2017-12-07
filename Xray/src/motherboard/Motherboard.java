@@ -11,11 +11,7 @@ import controllers.XrayController;
 public class Motherboard {
 
 //	These strings are collected by XrayController.
-	public String mbBrand;
-	public String mbManufacturer;
-	public String mbModel;
-	public String mbSerialNumber;
-	public String mbVersion;
+	public String mbBrand, mbManufacturer, mbModel, mbSerialNumber, mbVersion;
 	
 	/**
 	 * Sets all motherboard data.

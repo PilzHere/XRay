@@ -14,13 +14,7 @@ public class Networks {
 	private XrayController controller;
 	
 //	These strings are collected by XrayController.
-	public String networkInterfacesCount;
-	public String interfaceName;
-	public String interfaceDisplayname;
-	public String interfaceIPv4;
-	public String interfaceIPv6;
-	public String interfaceMAC;
-	public String interfaceMTU;
+	public String networkInterfacesCount, interfaceName, interfaceDisplayname, interfaceIPv4, interfaceIPv6, interfaceMAC, interfaceMTU;
 	
 	public Networks(XrayController controller) {
 		this.controller = controller;

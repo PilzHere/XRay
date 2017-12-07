@@ -26,7 +26,6 @@ import motherboard.bios.BIOS;
 import networks.Networks;
 import os.OperatingSystem;
 import oshi.SystemInfo;
-import oshi.hardware.Display;
 import usb.USBDevices;
 import xray.Xray;
 
@@ -142,10 +141,6 @@ public class XrayController implements Initializable{
 		
 //		GPU class automatically fatches data.
 		setGraphicsLabels();
-		
-//		System.out.println("Monitor 0: " + "\n" + XrayController.SysInf.getHardware().getDisplays()[0]);
-//		System.out.println("Monitor 1: " + "\n" + XrayController.SysInf.getHardware().getDisplays()[1]);
-//		System.out.println(XrayController.SysInf.getHardware().getDisplays().length + " x monitors.");
 		
 		monitors.setMonitorsData(monitorsList);
 		setMonitorsLabels();

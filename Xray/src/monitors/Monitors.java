@@ -13,8 +13,7 @@ public class Monitors {
 	private XrayController controller;
 	
 //	These strings are collected by XrayController.
-	public String monitorsCount;
-	public String monitorData;
+	public String monitorsCount, monitorData;
 	
 	public Monitors(XrayController controller) {
 		this.controller = controller;

@@ -14,21 +14,11 @@ public class Drives {
 	private XrayController controller;
 	
 //	These Strings are collected by XrayController.
-	public String drivesCount;
-	public String partitionsCount;
+	public String drivesCount, partitionsCount;
 	
-	public String driveModel;
-	public String driveSize;
-	public String driveName;
-	public String driveSerial;
+	public String driveModel, driveSize, driveName, driveSerial;
 	
-	public String partitionID;
-	public String partitionMountpoint;
-	public String partitionSize;
-	public String partitionUUID;
-	public String partitionType;
-	public String partitionMajor;
-	public String partitionMinor;
+	public String partitionID, partitionMountpoint, partitionSize, partitionUUID, partitionType, partitionMajor, partitionMinor;
 	
 	public Drives(XrayController controller) {
 		this.controller = controller;

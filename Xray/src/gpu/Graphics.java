@@ -48,9 +48,7 @@ import controllers.XrayController;
 public class Graphics {
 
 //	These strings are collected by XrayController.
-	public String gpuCard;
-	public String gpuVendor;
-	public String gpuOpenGLVersion;
+	public String gpuCard, gpuVendor, gpuOpenGLVersion;
 	
 //	The window handle
 	private long window;

@@ -11,16 +11,7 @@ import controllers.XrayController;
 public class Processor {
 
 //	These strings are collected by XrayController.
-	public String cpuBrand;
-	public String cpuName;
-	public String cpuFamily;
-	public String cpuModel;
-	public String cpuStepping;
-	public String cpuFrequency;
-	public String cpuArchitecture;
-	public String cpuPhysicalCores;
-	public String cpuLogicalCores;
-	public String cpuID;
+	public String cpuBrand, cpuName, cpuFamily, cpuModel, cpuStepping, cpuFrequency, cpuArchitecture, cpuPhysicalCores, cpuLogicalCores, cpuID;
 	
 	/**
 	 * Sets all CPU data.

@@ -16,12 +16,7 @@ public class USBDevices {
 	private boolean enabled;
 	
 //	These strings are collected by XrayController.
-	public String usbDevicesCount;
-	public String usbDeviceName;
-	public String usbDeviceVendor;
-	public String usbDeviceVendorID;
-	public String usbDeviceProductID;
-	public String usbDeviceSerialNumber;
+	public String usbDevicesCount, usbDeviceName, usbDeviceVendor, usbDeviceVendorID, usbDeviceProductID, usbDeviceSerialNumber;
 	
 	public USBDevices (XrayController controller) {
 		this.controller = controller;

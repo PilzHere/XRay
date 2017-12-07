@@ -11,10 +11,7 @@ import controllers.XrayController;
 public class Memory {
 
 //	These strings are collected by XrayController.
-	public String memoryTotal;
-	public String memoryAvailable;
-	public String memorySwapTotal;
-	public String memorySwapUsed;
+	public String memoryTotal, memoryAvailable, memorySwapTotal, memorySwapUsed;
 	
 	final long toKiBLimit = 1022976L;
 	final long toMiBLimit = 1047527424L;

@@ -11,11 +11,7 @@ import controllers.XrayController;
 public class OperatingSystem {
 
 //	These strings are collected by XrayController.
-	public String osManufacturer;
-	public String osName;
-	public String osVersion;
-	public String osArch;
-	public String osBuild;
+	public String osManufacturer, osName, osVersion, osArch, osBuild;
 	
 	/**
 	 * Sets all Operating System data.

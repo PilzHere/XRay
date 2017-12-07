@@ -11,10 +11,7 @@ import xray.Xray;
 public class About {
 
 //	These strings are collected by XrayController.
-	public String aboutVersion;
-	public String aboutDeveloper;
-	public String aboutDate;
-	public String aboutLicense;
+	public String aboutVersion, aboutDeveloper, aboutDate, aboutLicense;
 	
 	/**
 	 * Sets data to class variables.
