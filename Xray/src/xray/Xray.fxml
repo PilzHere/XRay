@@ -11,561 +11,655 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.XrayController">
-   <children>
-      <TabPane prefHeight="480.0" prefWidth="854.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <tabs>
-          <Tab text="Operating System">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="14.0" layoutY="14.0" text="Operating System">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="41.0" text="Manufacturer">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="214.0" layoutY="41.0" text="Name">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="414.0" layoutY="41.0" text="Version">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="109.0" text="Build">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="osManufacturer" layoutX="14.0" layoutY="58.0" text="OSManufacturer" />
-                        <Label fx:id="osName" layoutX="214.0" layoutY="58.0" text="OSName" />
-                        <Label fx:id="osVersion" layoutX="414.0" layoutY="58.0" text="OSVersion" />
-                        <Label fx:id="osBuild" layoutX="14.0" layoutY="126.0" text="OSBuild" />
-                        <Label fx:id="osArch" layoutX="14.0" layoutY="75.0" text="Architecture">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="osArch" layoutX="14.0" layoutY="92.0" text="OSArchitecture" />
-                     </children></AnchorPane>
-            </content>
-          </Tab>
-            <Tab text="Motherboard">
-               <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="14.0" layoutY="14.0" text="Motherboard">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Line endX="427.0" endY="480.0" startX="427.0" />
-                        <Label layoutX="442.0" layoutY="14.0" text="BIOS">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="41.0" text="Brand">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="75.0" text="Manufacturer">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="109.0" text="Model">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="143.0" text="Serial number">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="177.0" text="Version">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="mbBrand" layoutX="14.0" layoutY="58.0" text="mbBrand" />
-                        <Label fx:id="mbManufacturer" layoutX="14.0" layoutY="92.0" text="mbManufacturer" />
-                        <Label fx:id="mbModel" layoutX="14.0" layoutY="126.0" text="mbModel" />
-                        <Label fx:id="mbSerialNumber" layoutX="14.0" layoutY="160.0" text="mbSerialNumber" />
-                        <Label fx:id="mbVersion" layoutX="14.0" layoutY="194.0" text="mbVersion" />
-                        <Label layoutX="442.0" layoutY="41.0" text="Manufacturer">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="442.0" layoutY="75.0" text="Name">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="442.0" layoutY="109.0" text="Version">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="442.0" layoutY="143.0" text="Release date">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="biosManufacturer" layoutX="442.0" layoutY="58.0" text="biosManufacturer" />
-                        <Label fx:id="biosName" layoutX="442.0" layoutY="92.0" text="biosName" />
-                        <Label fx:id="biosVersion" layoutX="442.0" layoutY="126.0" text="biosVersion" />
-                        <Label fx:id="biosReleasedate" layoutX="442.0" layoutY="160.0" text="biosReleasedate" />
-                     </children></AnchorPane>
-               </content>
-            </Tab>
-          <Tab text="Processor">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="14.0" layoutY="14.0" text="Processor">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="41.0" text="Brand">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="cpuBrand" layoutX="14.0" layoutY="58.0" text="cpuBrand" />
-                        <Label layoutX="214.0" layoutY="41.0" text="Name">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="cpuName" layoutX="214.0" layoutY="58.0" text="cpuName" />
-                        <Label layoutX="14.0" layoutY="75.0" text="Family">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="cpuFamily" layoutX="14.0" layoutY="92.0" text="cpuFamily" />
-                        <Label layoutX="214.0" layoutY="75.0" text="Model">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="cpuModel" layoutX="214.0" layoutY="92.0" text="cpuModel" />
-                        <Label layoutX="414.0" layoutY="75.0" text="Stepping">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="cpuStepping" layoutX="414.0" layoutY="92.0" text="cpuStepping" />
-                        <Label layoutX="214.0" layoutY="109.0" text="Frequency">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="cpuFrequency" layoutX="214.0" layoutY="126.0" prefHeight="3.0" prefWidth="74.0" text="cpuFrequency" />
-                        <Label layoutX="14.0" layoutY="109.0" text="Architecture">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="cpuArchitecture" layoutX="14.0" layoutY="126.0" text="cpuArchitecture" />
-                        <Label layoutX="14.0" layoutY="143.0" text="Physical Cores">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="cpuPhysicalCores" layoutX="14.0" layoutY="160.0" text="cpuPhysicalCores" />
-                        <Label layoutX="214.0" layoutY="143.0" text="Logical Cores">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="cpuLogicalCores" layoutX="214.0" layoutY="160.0" text="cpuLogicalCores" />
-                        <Label layoutX="14.0" layoutY="177.0" text="ID">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="cpuID" layoutX="14.0" layoutY="194.0" text="cpuID" />
-                     </children></AnchorPane>
-            </content>
-          </Tab>
-            <Tab text="Memory">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="14.0" layoutY="14.0" text="Memory">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="41.0" text="Total">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="memoryTotal" layoutX="14.0" layoutY="58.0" text="memoryTotal" />
-                        <Label layoutX="14.0" layoutY="75.0" text="Available">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="memoryAvailable" layoutX="14.0" layoutY="92.0" text="memoryAvailable" />
-                        <Label layoutX="14.0" layoutY="109.0" text="Swap Total">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="memorySwapTotal" layoutX="14.0" layoutY="126.0" text="memorySwapTotal" />
-                        <Label layoutX="14.0" layoutY="143.0" text="Swap Used">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="memorySwapUsed" layoutX="14.0" layoutY="160.0" text="memorySwapUsed" />
-                     </children></AnchorPane>
-              </content>
-            </Tab>
-            <Tab text="Drives">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <ListView fx:id="drivesList" layoutX="14.0" layoutY="46.0" prefHeight="340.0" prefWidth="200.0" />
-                        <ListView fx:id="partitionsList" layoutX="227.0" layoutY="46.0" prefHeight="340.0" prefWidth="200.0" />
-                        <Label layoutX="14.0" layoutY="14.0" text="Drives">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="227.0" layoutY="14.0" text="Partitions">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="441.0" layoutY="14.0" text="Selected Drive">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Line endX="328.0" layoutX="528.0" layoutY="226.0" startX="-100.0" />
-                        <Label layoutX="441.0" layoutY="240.0" text="Selected Partition">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="393.0" text="Total Drives">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="drivesCount" layoutX="14.0" layoutY="409.0" text="drivesCount" />
-                        <Label layoutX="227.0" layoutY="393.0" text="Total Partitions">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="partitionsCount" layoutX="227.0" layoutY="409.0" text="partitionsCount" />
-                        <Label layoutX="441.0" layoutY="46.0" text="Model">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="driveModel" layoutX="441.0" layoutY="63.0" text="driveModel" />
-                        <Label layoutX="441.0" layoutY="148.0" text="Serial">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="driveSerial" layoutX="441.0" layoutY="165.0" text="driveSerial" />
-                        <Label layoutX="441.0" layoutY="80.0" text="Size">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="driveSize" layoutX="441.0" layoutY="97.0" text="driveSize" />
-                        <Label layoutX="441.0" layoutY="114.0" text="Name">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="driveName" layoutX="441.0" layoutY="131.0" text="driveName" />
-                        <Label layoutX="441.0" layoutY="267.0" text="ID">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="partitionID" layoutX="441.0" layoutY="284.0" text="partitionID" />
-                        <Label layoutX="642.0" layoutY="301.0" text="Major">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="partitionMajor" layoutX="642.0" layoutY="318.0" text="partitionMajor" />
-                        <Label layoutX="642.0" layoutY="335.0" text="Minor">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="partitionMinor" layoutX="642.0" layoutY="352.0" text="partitionMinor" />
-                        <Label layoutX="441.0" layoutY="301.0" text="Mount Point">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="partitionMountpoint" layoutX="441.0" layoutY="318.0" text="partitionMountpoint" />
-                        <Label layoutX="642.0" layoutY="267.0" text="Type">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="partitionType" layoutX="642.0" layoutY="284.0" text="partitionType" />
-                        <Label layoutX="441.0" layoutY="369.0" text="UUID">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="partitionUUID" layoutX="441.0" layoutY="385.0" text="partitionUUID" />
-                        <Label layoutX="441.0" layoutY="335.0" text="Size">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="partitionSize" layoutX="441.0" layoutY="352.0" text="partitionSize" />
-                     </children></AnchorPane>
-              </content>
-            </Tab>
-            <Tab text="Display">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="14.0" layoutY="14.0" text="Display">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="41.0" text="Adapter Model">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="gpuModel" layoutX="14.0" layoutY="58.0" text="gpuModel" />
-                        <Label layoutX="14.0" layoutY="75.0" text="Adapter Vendor">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="gpuVendor" layoutX="14.0" layoutY="92.0" text="gpuVendor" />
-                        <Label layoutX="14.0" layoutY="109.0" text="Adapter OpenGL Version">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="gpuOpenGLVersion" layoutX="14.0" layoutY="126.0" text="gpuOpenGLVersion" />
-                     </children></AnchorPane>
-              </content>
-            </Tab>
-            <Tab text="Monitors">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <ListView fx:id="monitorsList" layoutX="14.0" layoutY="46.0" prefHeight="340.0" prefWidth="203.0" />
-                        <Label layoutX="14.0" layoutY="14.0" text="Monitors">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="393.0" text="Total Monitors">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="totalMonitors" layoutX="14.0" layoutY="410.0" text="totalMonitors" />
-                        <TextArea fx:id="monitorTextArea" editable="false" layoutX="233.0" layoutY="46.0" prefHeight="339.0" prefWidth="607.0" />
-                        <Label layoutX="233.0" layoutY="14.0" text="Monitor Specifications">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-              </content>
-            </Tab>
-            <Tab text="Network">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="14.0" layoutY="14.0" text="Network Interfaces">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <ListView fx:id="networkInterfacesList" layoutX="14.0" layoutY="46.0" prefHeight="340.0" prefWidth="413.0" />
-                        <Label layoutX="14.0" layoutY="393.0" text="Total Network Interfaces">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="networkInterfacesCount" layoutX="14.0" layoutY="410.0" text="networkInterfacesCount" />
-                        <Label layoutX="441.0" layoutY="14.0" text="Selected Interface">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="441.0" layoutY="46.0" text="Name">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="interfaceName" layoutX="441.0" layoutY="63.0" text="interfaceName" />
-                        <Label layoutX="441.0" layoutY="80.0" text="Displayname">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="interfaceDisplayname" layoutX="441.0" layoutY="97.0" text="interfaceDisplayname" />
-                        <Label layoutX="441.0" layoutY="114.0" text="IPv4">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="interfaceIPv4" layoutX="441.0" layoutY="131.0" text="interfaceIPv4" />
-                        <Label layoutX="441.0" layoutY="148.0" text="IPv6">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="interfaceIPv6" layoutX="441.0" layoutY="165.0" text="interfaceIPv6" />
-                        <Label layoutX="441.0" layoutY="182.0" text="MAC">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="interfaceMAC" layoutX="441.0" layoutY="199.0" text="interfaceMAC" />
-                        <Label layoutX="441.0" layoutY="217.0" text="MTU">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="interfaceMTU" layoutX="441.0" layoutY="234.0" text="interfaceMTU" />
-                     </children></AnchorPane>
-              </content>
-            </Tab>
-            <Tab text="USB Devices">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="14.0" layoutY="14.0" text="USB Devices">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <CheckBox fx:id="usbDevicesBox" layoutX="14.0" layoutY="41.0" mnemonicParsing="false" text="Enable (slow on some systems)" />
-                        <ListView fx:id="usbDevicesList" layoutX="14.0" layoutY="70.0" prefHeight="316.0" prefWidth="413.0" />
-                        <Label layoutX="14.0" layoutY="393.0" text="Total USB Devices">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="usbDevicesCount" layoutX="14.0" layoutY="410.0" text="usbDevicesCount" />
-                        <Label layoutX="441.0" layoutY="14.0" text="Selected Device">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="441.0" layoutY="70.0" text="Name">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="441.0" layoutY="104.0" text="Vendor">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="441.0" layoutY="138.0" text="Vendor ID">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="441.0" layoutY="172.0" text="Product ID">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="441.0" layoutY="206.0" text="Serial Number">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="usbDeviceName" layoutX="441.0" layoutY="87.0" text="usbDeviceName" />
-                        <Label fx:id="usbDeviceVendor" layoutX="441.0" layoutY="121.0" text="usbDeviceVendor" />
-                        <Label fx:id="usbDeviceVendorID" layoutX="441.0" layoutY="155.0" text="usbDeviceVendorID" />
-                        <Label fx:id="usbDeviceProductID" layoutX="441.0" layoutY="189.0" text="usbDeviceProductID" />
-                        <Label fx:id="usbDeviceSerialNumber" layoutX="441.0" layoutY="226.0" text="usbDeviceSerialNumber" />
-                     </children>
-                  </AnchorPane>
-              </content>
-            </Tab>
-            <Tab text="About">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="14.0" layoutY="14.0" text="About XRay">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="41.0" text="Version">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="aboutVersion" layoutX="14.0" layoutY="58.0" text="aboutVersion" />
-                        <Label layoutX="14.0" layoutY="75.0" text="Date">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="aboutDate" layoutX="14.0" layoutY="92.0" text="aboutDate" />
-                        <Label alignment="CENTER" layoutX="235.0" layoutY="18.0" text="License">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="aboutLicense" alignment="TOP_LEFT" layoutX="235.0" layoutY="38.0" prefHeight="397.0" prefWidth="600.0" text="aboutLicense" />
-                        <Label layoutX="14.0" layoutY="109.0" text="Developer">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="aboutDeveloper" layoutX="14.0" layoutY="126.0" text="aboutDeveloper" />
-                        <Label layoutX="14.0" layoutY="177.0" text="Website">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Hyperlink fx:id="aboutWebsite" layoutX="10.0" layoutY="190.0" text="christianpilz.com" />
-                        <Label layoutX="14.0" layoutY="143.0" text="Contact">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="aboutMail" layoutX="14.0" layoutY="160.0" text="contact@christianpilz.com" />
-                     </children></AnchorPane>
-              </content>
-            </Tab>
-        </tabs>
-      </TabPane>
-   </children>
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity"
+	maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+	prefHeight="480.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.111"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.XrayController">
+	<children>
+		<TabPane prefHeight="480.0" prefWidth="854.0"
+			tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0"
+			AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+			AnchorPane.topAnchor="0.0">
+			<tabs>
+				<Tab text="Operating System">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<Label layoutX="14.0" layoutY="14.0" text="Operating System">
+									<font>
+										<Font name="System Bold" size="18.0" />
+									</font>
+								</Label>
+								<Label layoutX="14.0" layoutY="41.0" text="Manufacturer">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label layoutX="214.0" layoutY="41.0" text="Name">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label layoutX="414.0" layoutY="41.0" text="Version">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label layoutX="14.0" layoutY="109.0" text="Build">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="osManufacturer" layoutX="14.0" layoutY="58.0"
+									text="OSManufacturer" />
+								<Label fx:id="osName" layoutX="214.0" layoutY="58.0" text="OSName" />
+								<Label fx:id="osVersion" layoutX="414.0" layoutY="58.0"
+									text="OSVersion" />
+								<Label fx:id="osBuild" layoutX="14.0" layoutY="126.0"
+									text="OSBuild" />
+								<Label fx:id="osArch" layoutX="14.0" layoutY="75.0"
+									text="Architecture">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="osArch" layoutX="14.0" layoutY="92.0"
+									text="OSArchitecture" />
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab text="Motherboard">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<Label layoutX="14.0" layoutY="14.0" text="Motherboard">
+									<font>
+										<Font name="System Bold" size="18.0" />
+									</font>
+								</Label>
+								<Line endX="427.0" endY="480.0" startX="427.0" />
+								<Label layoutX="442.0" layoutY="14.0" text="BIOS">
+									<font>
+										<Font name="System Bold" size="18.0" />
+									</font>
+								</Label>
+								<Label layoutX="14.0" layoutY="41.0" text="Brand">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label layoutX="14.0" layoutY="75.0" text="Manufacturer">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label layoutX="14.0" layoutY="109.0" text="Model">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label layoutX="14.0" layoutY="143.0" text="Serial number">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label layoutX="14.0" layoutY="177.0" text="Version">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="mbBrand" layoutX="14.0" layoutY="58.0" text="mbBrand" />
+								<Label fx:id="mbManufacturer" layoutX="14.0" layoutY="92.0"
+									text="mbManufacturer" />
+								<Label fx:id="mbModel" layoutX="14.0" layoutY="126.0"
+									text="mbModel" />
+								<Label fx:id="mbSerialNumber" layoutX="14.0" layoutY="160.0"
+									text="mbSerialNumber" />
+								<Label fx:id="mbVersion" layoutX="14.0" layoutY="194.0"
+									text="mbVersion" />
+								<Label layoutX="442.0" layoutY="41.0" text="Manufacturer">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label layoutX="442.0" layoutY="75.0" text="Name">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label layoutX="442.0" layoutY="109.0" text="Version">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label layoutX="442.0" layoutY="143.0" text="Release date">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="biosManufacturer" layoutX="442.0" layoutY="58.0"
+									text="biosManufacturer" />
+								<Label fx:id="biosName" layoutX="442.0" layoutY="92.0"
+									text="biosName" />
+								<Label fx:id="biosVersion" layoutX="442.0" layoutY="126.0"
+									text="biosVersion" />
+								<Label fx:id="biosReleasedate" layoutX="442.0" layoutY="160.0"
+									text="biosReleasedate" />
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab text="Processor">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<Label layoutX="14.0" layoutY="14.0" text="Processor">
+									<font>
+										<Font name="System Bold" size="18.0" />
+									</font>
+								</Label>
+								<Label layoutX="14.0" layoutY="41.0" text="Brand">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="cpuBrand" layoutX="14.0" layoutY="58.0"
+									text="cpuBrand" />
+								<Label layoutX="214.0" layoutY="41.0" text="Name">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="cpuName" layoutX="214.0" layoutY="58.0"
+									text="cpuName" />
+								<Label layoutX="14.0" layoutY="75.0" text="Family">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="cpuFamily" layoutX="14.0" layoutY="92.0"
+									text="cpuFamily" />
+								<Label layoutX="214.0" layoutY="75.0" text="Model">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="cpuModel" layoutX="214.0" layoutY="92.0"
+									text="cpuModel" />
+								<Label layoutX="414.0" layoutY="75.0" text="Stepping">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="cpuStepping" layoutX="414.0" layoutY="92.0"
+									text="cpuStepping" />
+								<Label layoutX="214.0" layoutY="109.0" text="Frequency">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="cpuFrequency" layoutX="214.0" layoutY="126.0"
+									prefHeight="3.0" prefWidth="74.0" text="cpuFrequency" />
+								<Label layoutX="14.0" layoutY="109.0" text="Architecture">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="cpuArchitecture" layoutX="14.0" layoutY="126.0"
+									text="cpuArchitecture" />
+								<Label layoutX="14.0" layoutY="143.0" text="Physical Cores">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="cpuPhysicalCores" layoutX="14.0" layoutY="160.0"
+									text="cpuPhysicalCores" />
+								<Label layoutX="214.0" layoutY="143.0" text="Logical Cores">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="cpuLogicalCores" layoutX="214.0" layoutY="160.0"
+									text="cpuLogicalCores" />
+								<Label layoutX="14.0" layoutY="177.0" text="ID">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="cpuID" layoutX="14.0" layoutY="194.0" text="cpuID" />
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab text="Memory">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<Label layoutX="14.0" layoutY="14.0" text="Memory">
+									<font>
+										<Font name="System Bold" size="18.0" />
+									</font>
+								</Label>
+								<Label layoutX="14.0" layoutY="41.0" text="Total">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="memoryTotal" layoutX="14.0" layoutY="58.0"
+									text="memoryTotal" />
+								<Label layoutX="14.0" layoutY="75.0" text="Available">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="memoryAvailable" layoutX="14.0" layoutY="92.0"
+									text="memoryAvailable" />
+								<Label layoutX="14.0" layoutY="109.0" text="Swap Total">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="memorySwapTotal" layoutX="14.0" layoutY="126.0"
+									text="memorySwapTotal" />
+								<Label layoutX="14.0" layoutY="143.0" text="Swap Used">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="memorySwapUsed" layoutX="14.0" layoutY="160.0"
+									text="memorySwapUsed" />
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab text="Drives">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<ListView fx:id="drivesList" layoutX="14.0" layoutY="46.0"
+									prefHeight="340.0" prefWidth="200.0" />
+								<ListView fx:id="partitionsList" layoutX="227.0"
+									layoutY="46.0" prefHeight="340.0" prefWidth="200.0" />
+								<Label layoutX="14.0" layoutY="14.0" text="Drives">
+									<font>
+										<Font name="System Bold" size="18.0" />
+									</font>
+								</Label>
+								<Label layoutX="227.0" layoutY="14.0" text="Partitions">
+									<font>
+										<Font name="System Bold" size="18.0" />
+									</font>
+								</Label>
+								<Label layoutX="441.0" layoutY="14.0" text="Selected Drive">
+									<font>
+										<Font name="System Bold" size="18.0" />
+									</font>
+								</Label>
+								<Line endX="328.0" layoutX="528.0" layoutY="226.0" startX="-100.0" />
+								<Label layoutX="441.0" layoutY="240.0" text="Selected Partition">
+									<font>
+										<Font name="System Bold" size="18.0" />
+									</font>
+								</Label>
+								<Label layoutX="14.0" layoutY="393.0" text="Total Drives">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="drivesCount" layoutX="14.0" layoutY="409.0"
+									text="drivesCount" />
+								<Label layoutX="227.0" layoutY="393.0" text="Total Partitions">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="partitionsCount" layoutX="227.0" layoutY="409.0"
+									text="partitionsCount" />
+								<Label layoutX="441.0" layoutY="46.0" text="Model">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="driveModel" layoutX="441.0" layoutY="63.0"
+									text="driveModel" />
+								<Label layoutX="441.0" layoutY="148.0" text="Serial">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="driveSerial" layoutX="441.0" layoutY="165.0"
+									text="driveSerial" />
+								<Label layoutX="441.0" layoutY="80.0" text="Size">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="driveSize" layoutX="441.0" layoutY="97.0"
+									text="driveSize" />
+								<Label layoutX="441.0" layoutY="114.0" text="Name">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="driveName" layoutX="441.0" layoutY="131.0"
+									text="driveName" />
+								<Label layoutX="441.0" layoutY="267.0" text="ID">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="partitionID" layoutX="441.0" layoutY="284.0"
+									text="partitionID" />
+								<Label layoutX="642.0" layoutY="301.0" text="Major">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="partitionMajor" layoutX="642.0" layoutY="318.0"
+									text="partitionMajor" />
+								<Label layoutX="642.0" layoutY="335.0" text="Minor">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="partitionMinor" layoutX="642.0" layoutY="352.0"
+									text="partitionMinor" />
+								<Label layoutX="441.0" layoutY="301.0" text="Mount Point">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="partitionMountpoint" layoutX="441.0"
+									layoutY="318.0" text="partitionMountpoint" />
+								<Label layoutX="642.0" layoutY="267.0" text="Type">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="partitionType" layoutX="642.0" layoutY="284.0"
+									text="partitionType" />
+								<Label layoutX="441.0" layoutY="369.0" text="UUID">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="partitionUUID" layoutX="441.0" layoutY="385.0"
+									text="partitionUUID" />
+								<Label layoutX="441.0" layoutY="335.0" text="Size">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="partitionSize" layoutX="441.0" layoutY="352.0"
+									text="partitionSize" />
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab text="Display">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<Label layoutX="14.0" layoutY="14.0" text="Display">
+									<font>
+										<Font name="System Bold" size="18.0" />
+									</font>
+								</Label>
+								<Label layoutX="14.0" layoutY="41.0" text="Adapter Model">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="gpuModel" layoutX="14.0" layoutY="58.0"
+									text="gpuModel" />
+								<Label layoutX="14.0" layoutY="75.0" text="Adapter Vendor">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="gpuVendor" layoutX="14.0" layoutY="92.0"
+									text="gpuVendor" />
+								<Label layoutX="14.0" layoutY="109.0" text="Adapter OpenGL Version">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="gpuOpenGLVersion" layoutX="14.0" layoutY="126.0"
+									text="gpuOpenGLVersion" />
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab text="Monitors">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<ListView fx:id="monitorsList" layoutX="14.0" layoutY="46.0"
+									prefHeight="340.0" prefWidth="203.0" />
+								<Label layoutX="14.0" layoutY="14.0" text="Monitors">
+									<font>
+										<Font name="System Bold" size="18.0" />
+									</font>
+								</Label>
+								<Label layoutX="14.0" layoutY="393.0" text="Total Monitors">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="totalMonitors" layoutX="14.0" layoutY="410.0"
+									text="totalMonitors" />
+								<TextArea fx:id="monitorTextArea" editable="false"
+									layoutX="233.0" layoutY="46.0" prefHeight="339.0" prefWidth="607.0" />
+								<Label layoutX="233.0" layoutY="14.0" text="Monitor Specifications">
+									<font>
+										<Font name="System Bold" size="18.0" />
+									</font>
+								</Label>
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab text="Network">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<Label layoutX="14.0" layoutY="14.0" text="Network Interfaces">
+									<font>
+										<Font name="System Bold" size="18.0" />
+									</font>
+								</Label>
+								<ListView fx:id="networkInterfacesList" layoutX="14.0"
+									layoutY="46.0" prefHeight="340.0" prefWidth="413.0" />
+								<Label layoutX="14.0" layoutY="393.0" text="Total Network Interfaces">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="networkInterfacesCount" layoutX="14.0"
+									layoutY="410.0" text="networkInterfacesCount" />
+								<Label layoutX="441.0" layoutY="14.0" text="Selected Interface">
+									<font>
+										<Font name="System Bold" size="18.0" />
+									</font>
+								</Label>
+								<Label layoutX="441.0" layoutY="46.0" text="Name">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="interfaceName" layoutX="441.0" layoutY="63.0"
+									text="interfaceName" />
+								<Label layoutX="441.0" layoutY="80.0" text="Displayname">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="interfaceDisplayname" layoutX="441.0"
+									layoutY="97.0" text="interfaceDisplayname" />
+								<Label layoutX="441.0" layoutY="114.0" text="IPv4">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="interfaceIPv4" layoutX="441.0" layoutY="131.0"
+									text="interfaceIPv4" />
+								<Label layoutX="441.0" layoutY="148.0" text="IPv6">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="interfaceIPv6" layoutX="441.0" layoutY="165.0"
+									text="interfaceIPv6" />
+								<Label layoutX="441.0" layoutY="182.0" text="MAC">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="interfaceMAC" layoutX="441.0" layoutY="199.0"
+									text="interfaceMAC" />
+								<Label layoutX="441.0" layoutY="217.0" text="MTU">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="interfaceMTU" layoutX="441.0" layoutY="234.0"
+									text="interfaceMTU" />
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab text="USB Devices">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<Label layoutX="14.0" layoutY="14.0" text="USB Devices">
+									<font>
+										<Font name="System Bold" size="18.0" />
+									</font>
+								</Label>
+								<CheckBox fx:id="usbDevicesBox" layoutX="14.0" layoutY="41.0"
+									mnemonicParsing="false" text="Enable (slow on some systems)" />
+								<ListView fx:id="usbDevicesList" layoutX="14.0"
+									layoutY="70.0" prefHeight="316.0" prefWidth="413.0" />
+								<Label layoutX="14.0" layoutY="393.0" text="Total USB Devices">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="usbDevicesCount" layoutX="14.0" layoutY="410.0"
+									text="usbDevicesCount" />
+								<Label layoutX="441.0" layoutY="14.0" text="Selected Device">
+									<font>
+										<Font name="System Bold" size="18.0" />
+									</font>
+								</Label>
+								<Label layoutX="441.0" layoutY="70.0" text="Name">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label layoutX="441.0" layoutY="104.0" text="Vendor">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label layoutX="441.0" layoutY="138.0" text="Vendor ID">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label layoutX="441.0" layoutY="172.0" text="Product ID">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label layoutX="441.0" layoutY="206.0" text="Serial Number">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="usbDeviceName" layoutX="441.0" layoutY="87.0"
+									text="usbDeviceName" />
+								<Label fx:id="usbDeviceVendor" layoutX="441.0" layoutY="121.0"
+									text="usbDeviceVendor" />
+								<Label fx:id="usbDeviceVendorID" layoutX="441.0" layoutY="155.0"
+									text="usbDeviceVendorID" />
+								<Label fx:id="usbDeviceProductID" layoutX="441.0" layoutY="189.0"
+									text="usbDeviceProductID" />
+								<Label fx:id="usbDeviceSerialNumber" layoutX="441.0"
+									layoutY="226.0" text="usbDeviceSerialNumber" />
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab text="About">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<Label layoutX="14.0" layoutY="14.0" text="About XRay">
+									<font>
+										<Font name="System Bold" size="18.0" />
+									</font>
+								</Label>
+								<Label layoutX="14.0" layoutY="41.0" text="Version">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="aboutVersion" layoutX="14.0" layoutY="58.0"
+									text="aboutVersion" />
+								<Label layoutX="14.0" layoutY="75.0" text="Date">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="aboutDate" layoutX="14.0" layoutY="92.0"
+									text="aboutDate" />
+								<Label alignment="CENTER" layoutX="235.0" layoutY="18.0"
+									text="License">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="aboutLicense" alignment="TOP_LEFT" layoutX="235.0"
+									layoutY="38.0" prefHeight="397.0" prefWidth="600.0" text="aboutLicense" />
+								<Label layoutX="14.0" layoutY="109.0" text="Developer">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="aboutDeveloper" layoutX="14.0" layoutY="126.0"
+									text="aboutDeveloper" />
+								<Label layoutX="14.0" layoutY="177.0" text="Website">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Hyperlink fx:id="aboutWebsite" layoutX="10.0"
+									layoutY="190.0" text="christianpilz.com" />
+								<Label layoutX="14.0" layoutY="143.0" text="Contact">
+									<font>
+										<Font name="System Bold" size="12.0" />
+									</font>
+								</Label>
+								<Label fx:id="aboutMail" layoutX="14.0" layoutY="160.0"
+									text="contact@christianpilz.com" />
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</children>
 </AnchorPane>

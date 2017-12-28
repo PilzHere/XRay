@@ -3,30 +3,63 @@ package motherboard.bios;
 import controllers.XrayController;
 
 /**
- * The "BIOS section (inside Motherboard section)" class of the app.
- * Contains BIOS data.
+ * The "BIOS section (inside Motherboard section)" class of the app. Contains
+ * BIOS data.
+ * 
  * @author PilzHere
  *
  */
 public class BIOS {
 
-//	These strings are collected by XrayController.
-	public String biosName, biosManufacturer, biosReleasedate, biosVersion;
-	
+	private String biosName, biosManufacturer, biosReleasedate, biosVersion;
+
 	/**
 	 * Sets all BIOS data.
 	 */
 	public void setBIOSData() {
-		biosManufacturer = XrayController.SysInf.getHardware().getComputerSystem().getFirmware().getManufacturer();
-		biosManufacturer = XrayController.helper.stringIsEmptyOrUnknownOrNull(biosManufacturer);
-		
-		biosName = XrayController.SysInf.getHardware().getComputerSystem().getFirmware().getVersion();
-		biosName = XrayController.helper.stringIsEmptyOrUnknownOrNull(biosName);
-		
-		biosVersion = XrayController.SysInf.getHardware().getComputerSystem().getFirmware().getName();
-		biosVersion = XrayController.helper.stringIsEmptyOrUnknownOrNull(biosVersion);
-		
-		biosReleasedate = XrayController.SysInf.getHardware().getComputerSystem().getFirmware().getReleaseDate().toString();
-		biosReleasedate = XrayController.helper.stringIsEmptyOrUnknownOrNull(biosReleasedate);
+		setBiosManufacturer(XrayController.SYS_INF.getHardware().getComputerSystem().getFirmware().getManufacturer());
+		setBiosManufacturer(XrayController.HELPER.stringIsEmptyOrUnknownOrNull(getBiosManufacturer()));
+
+		setBiosName(XrayController.SYS_INF.getHardware().getComputerSystem().getFirmware().getVersion());
+		setBiosName(XrayController.HELPER.stringIsEmptyOrUnknownOrNull(getBiosName()));
+
+		setBiosVersion(XrayController.SYS_INF.getHardware().getComputerSystem().getFirmware().getName());
+		setBiosVersion(XrayController.HELPER.stringIsEmptyOrUnknownOrNull(getBiosVersion()));
+
+		setBiosReleasedate(
+				XrayController.SYS_INF.getHardware().getComputerSystem().getFirmware().getReleaseDate().toString());
+		setBiosReleasedate(XrayController.HELPER.stringIsEmptyOrUnknownOrNull(getBiosReleasedate()));
+	}
+
+	public String getBiosName() {
+		return biosName;
+	}
+
+	private void setBiosName(String biosName) {
+		this.biosName = biosName;
+	}
+
+	public String getBiosManufacturer() {
+		return biosManufacturer;
+	}
+
+	private void setBiosManufacturer(String biosManufacturer) {
+		this.biosManufacturer = biosManufacturer;
+	}
+
+	public String getBiosReleasedate() {
+		return biosReleasedate;
+	}
+
+	private void setBiosReleasedate(String biosReleasedate) {
+		this.biosReleasedate = biosReleasedate;
+	}
+
+	public String getBiosVersion() {
+		return biosVersion;
+	}
+
+	private void setBiosVersion(String biosVersion) {
+		this.biosVersion = biosVersion;
 	}
 }

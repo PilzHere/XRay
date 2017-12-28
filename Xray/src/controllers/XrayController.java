@@ -31,154 +31,161 @@ import xray.Xray;
 
 /**
  * Controller for XRay.
+ * 
  * @author PilzHere
  *
  */
-public class XrayController implements Initializable{
-	
-	private static OperatingSystem os = new OperatingSystem();
-	private static Motherboard mb = new Motherboard();
-	private static BIOS bios = new BIOS();
-	private static Processor cpu = new Processor();
-	private static Memory ram = new Memory();
-	private Drives drives = new Drives(this);
-	private Networks net = new Networks(this);
-	private USBDevices usb = new USBDevices(this);
-	private Graphics gpu = new Graphics();
-	private Monitors monitors = new Monitors(this);
-	private static About about = new About();
-	
-//	Helpers
-	public static Helper helper = new Helper();
-	
-//	Oshi
-	public static SystemInfo SysInf;
-	
-//	FXML components.
-//	OS
+public class XrayController implements Initializable {
+
+	private static final OperatingSystem OS = new OperatingSystem();
+	private static final Motherboard MB = new Motherboard();
+	private static final BIOS BIOS = new BIOS();
+	private static final Processor CPU = new Processor();
+	private static final Memory RAM = new Memory();
+	private final Drives drives = new Drives(this);
+	private final Networks net = new Networks(this);
+	private final USBDevices usb = new USBDevices(this);
+	private final Graphics gpu = new Graphics();
+	private final Monitors monitors = new Monitors(this);
+	private static final About ABOUT = new About();
+
+	// Helpers
+	public static final Helper HELPER = new Helper();
+
+	// Oshi
+	public static final SystemInfo SYS_INF = new SystemInfo();
+
+	// FXML components.
+	// OS
 	@FXML
 	public Label osManufacturer, osName, osVersion, osArch, osBuild;
 
-//	Motherboard
+	// Motherboard
 	@FXML
 	private Label mbBrand, mbManufacturer, mbModel, mbSerialNumber, mbVersion;
-	
-//	BIOS
+
+	// BIOS
 	@FXML
 	private Label biosManufacturer, biosName, biosVersion, biosReleasedate;
-	
-//	CPU
+
+	// CPU
 	@FXML
-	private Label cpuBrand, cpuName, cpuFamily, cpuModel, cpuStepping, cpuFrequency, cpuArchitecture, cpuPhysicalCores, cpuLogicalCores, cpuID;
-	
-//	Memory
+	private Label cpuBrand, cpuName, cpuFamily, cpuModel, cpuStepping, cpuFrequency, cpuArchitecture, cpuPhysicalCores,
+			cpuLogicalCores, cpuID;
+
+	// Memory
 	@FXML
 	private Label memoryTotal, memoryAvailable, memorySwapTotal, memorySwapUsed;
-	
-//	Drives
+
+	// Drives
 	@FXML
 	private ListView<String> drivesList, partitionsList;
 	@FXML
-	private Label drivesCount, partitionsCount, driveModel, driveSize, driveName, driveSerial, partitionID, partitionMountpoint, partitionSize,
-				  partitionUUID, partitionType, partitionMajor, partitionMinor;
-	
-//	Graphics
+	private Label drivesCount, partitionsCount, driveModel, driveSize, driveName, driveSerial, partitionID,
+			partitionMountpoint, partitionSize, partitionUUID, partitionType, partitionMajor, partitionMinor;
+
+	// Graphics
 	@FXML
 	private Label gpuModel, gpuVendor, gpuOpenGLVersion;
 
-//	Monitors
+	// Monitors
 	@FXML
 	private ListView<String> monitorsList;
 	@FXML
 	private TextArea monitorTextArea;
 	@FXML
 	private Label totalMonitors;
-	
-//	Network
+
+	// Network
 	@FXML
 	private ListView<String> networkInterfacesList;
 	@FXML
-	private Label networkInterfacesCount, interfaceName, interfaceDisplayname, interfaceIPv4, interfaceIPv6, interfaceMAC, interfaceMTU;
-	
-//	USB Devices
+	private Label networkInterfacesCount, interfaceName, interfaceDisplayname, interfaceIPv4, interfaceIPv6,
+			interfaceMAC, interfaceMTU;
+
+	// USB Devices
 	@FXML
 	public CheckBox usbDevicesBox;
 	@FXML
 	private ListView<String> usbDevicesList;
 	@FXML
-	private Label usbDevicesCount, usbDeviceName, usbDeviceVendor, usbDeviceVendorID, usbDeviceProductID, usbDeviceSerialNumber;
-	
-//	About
+	private Label usbDevicesCount, usbDeviceName, usbDeviceVendor, usbDeviceVendorID, usbDeviceProductID,
+			usbDeviceSerialNumber;
+
+	// About
 	@FXML
 	private Label aboutVersion, aboutDeveloper, aboutDate, aboutLicense, aboutMail;
 	@FXML
 	private Hyperlink aboutWebsite;
-	
+
+	// Empty string
+	private static final String empty = "";
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		SysInf = new SystemInfo();
-		
 		clearAllLabels();
-		
-		os.setOperatingSystemData();
+
+		OS.setOperatingSystemData();
 		setOSLabels();
-		
-		mb.setMotherboardData();
+
+		MB.setMotherboardData();
 		setMotherboardLabels();
-		
-		bios.setBIOSData();
+
+		BIOS.setBIOSData();
 		setBIOSLabels();
-		
-		cpu.setProcessorData();
+
+		CPU.setProcessorData();
 		setProcessorLabels();
-		
-		ram.setMemoryData();
+
+		RAM.setMemoryData();
 		setMemoryLabels();
-		
+
 		drives.setDrivesData(drivesList);
 		setDrivesLabels();
 		setPartitionsLabels();
-		
-//		GPU class automatically fatches data.
+
+		// GPU class automatically fatches data.
 		setGraphicsLabels();
-		
+
 		monitors.setMonitorsData(monitorsList);
 		setMonitorsLabels();
-		
+
 		net.setNetworkInterfacesData(networkInterfacesList);
 		setNetworkInterfacesLabels();
-		
-		about.setAboutData();
+
+		ABOUT.setAboutData();
 		setAboutLabels();
-		
+
 		setFXMLEvents();
-		
+
 	}
-	
+
 	/**
 	 * Sets FXML Events.
 	 */
 	private void setFXMLEvents() {
 		drivesList.setOnMouseClicked(e -> drives.drivesListClicked(drivesList, partitionsList));
 		partitionsList.setOnMouseClicked(e -> drives.partitionsListClicked(partitionsList));
-		
+
 		networkInterfacesList.setOnMouseClicked(e -> net.networksInterfacesListClicked(networkInterfacesList));
-		
+
 		usbDevicesBox.setOnMouseClicked(e -> usb.setDevicesData(usbDevicesList));
 		usbDevicesList.setOnMouseClicked(e -> usb.usbDevicesListClicked(usbDevicesList));
-		
+
 		monitorsList.setOnMouseClicked(e -> monitors.monitorsListClicked(monitorsList));
-		
-		/* Opening default web browser doesn't work on Ubuntu 17.10.
-		 * Workaround: don't activate event if running Linux.
+
+		/*
+		 * Opening default web browser doesn't work on Ubuntu 17.10. Workaround: don't
+		 * activate event if running Linux.
 		 */
-		 if (checkIfOsIsLinux(System.getProperty("os.name"))) {
-			 aboutWebsite.setOnMouseClicked(e -> goToMyWebsite()); 
-		 }
+		if (checkIfOsIsLinux(System.getProperty("os.name"))) {
+			aboutWebsite.setOnMouseClicked(e -> goToMyWebsite());
+		}
 	}
-	
+
 	/**
 	 * Checks if the Operating System is Linux.
+	 * 
 	 * @param osName
 	 * @return
 	 */
@@ -186,28 +193,26 @@ public class XrayController implements Initializable{
 		String osLinux = "Linux";
 		if (osName.equals(osLinux)) {
 			return false;
-		}
-		else {
+		} else {
 			return true;
 		}
 	}
-	
+
 	/**
 	 * If the desktop is supported: show my website in standard web browser.
 	 */
 	private void goToMyWebsite() {
-		if(Desktop.isDesktopSupported())
-	    {
-	        try {
-	            Desktop.getDesktop().browse(new URI(Xray.DEVELOPER_WEBSITE));
-	        } catch (IOException e1) {
-	            e1.printStackTrace();
-	        } catch (URISyntaxException e1) {
-	            e1.printStackTrace();
-	        }
-	    }
+		if (Desktop.isDesktopSupported()) {
+			try {
+				Desktop.getDesktop().browse(new URI(Xray.getDeveloperWebsite()));
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			} catch (URISyntaxException e1) {
+				e1.printStackTrace();
+			}
+		}
 	}
-	
+
 	/**
 	 * Clears ALL labels.
 	 */
@@ -225,270 +230,270 @@ public class XrayController implements Initializable{
 		clearUsbDevicesLabels();
 		clearAboutLabels();
 	}
-	
+
 	/**
 	 * Clears Opearting System labels.
 	 */
 	private void clearOSLabels() {
-		osManufacturer.setText("");
-		osName.setText("");
-		osVersion.setText("");
-		osArch.setText("");
-		osBuild.setText("");
+		osManufacturer.setText(empty);
+		osName.setText(empty);
+		osVersion.setText(empty);
+		osArch.setText(empty);
+		osBuild.setText(empty);
 	}
-	
+
 	/**
 	 * Clears motherboard labels.
 	 */
 	private void clearMotherboardLabels() {
-		mbBrand.setText("");
-		mbManufacturer.setText("");
-		mbModel.setText("");
-		mbSerialNumber.setText("");
-		mbVersion.setText("");
+		mbBrand.setText(empty);
+		mbManufacturer.setText(empty);
+		mbModel.setText(empty);
+		mbSerialNumber.setText(empty);
+		mbVersion.setText(empty);
 	}
-	
+
 	/**
 	 * Clears BIOS Labels.
 	 */
 	private void clearBIOSLabels() {
-		biosManufacturer.setText("");
-		biosName.setText("");
-		biosVersion.setText("");
-		biosReleasedate.setText("");
+		biosManufacturer.setText(empty);
+		biosName.setText(empty);
+		biosVersion.setText(empty);
+		biosReleasedate.setText(empty);
 	}
-	
+
 	/**
 	 * Clears CPU labels.
 	 */
 	private void clearCPULabels() {
-		cpuBrand.setText("");
-		cpuName.setText("");
-		cpuFamily.setText("");
-		cpuModel.setText("");
-		cpuStepping.setText("");
-		cpuFrequency.setText("");
-		cpuArchitecture.setText("");
-		cpuPhysicalCores.setText("");
-		cpuLogicalCores.setText("");
-		cpuID.setText("");
+		cpuBrand.setText(empty);
+		cpuName.setText(empty);
+		cpuFamily.setText(empty);
+		cpuModel.setText(empty);
+		cpuStepping.setText(empty);
+		cpuFrequency.setText(empty);
+		cpuArchitecture.setText(empty);
+		cpuPhysicalCores.setText(empty);
+		cpuLogicalCores.setText(empty);
+		cpuID.setText(empty);
 	}
-	
+
 	/**
 	 * Clears RAM labels.
 	 */
 	private void clearMemoryLabels() {
-		memoryTotal.setText("");
-		memoryAvailable.setText("");
-		memorySwapTotal.setText("");
-		memorySwapUsed.setText("");
+		memoryTotal.setText(empty);
+		memoryAvailable.setText(empty);
+		memorySwapTotal.setText(empty);
+		memorySwapUsed.setText(empty);
 	}
-	
+
 	/**
 	 * Clears drives labels.
 	 */
 	private void clearDrivesLabels() {
-		drivesCount.setText("");
-		partitionsCount.setText("");
-		driveModel.setText("");
-		driveSize.setText("");
-		driveName.setText("");
-		driveSerial.setText("");
+		drivesCount.setText(empty);
+		partitionsCount.setText(empty);
+		driveModel.setText(empty);
+		driveSize.setText(empty);
+		driveName.setText(empty);
+		driveSerial.setText(empty);
 	}
-	
+
 	/**
 	 * Clears partitions labels.
 	 */
 	private void clearPartitionsLabels() {
-		partitionID.setText("");
-		partitionMountpoint.setText("");
-		partitionSize.setText("");
-		partitionUUID.setText("");
-		partitionType.setText("");
-		partitionMajor.setText("");
-		partitionMinor.setText("");
+		partitionID.setText(empty);
+		partitionMountpoint.setText(empty);
+		partitionSize.setText(empty);
+		partitionUUID.setText(empty);
+		partitionType.setText(empty);
+		partitionMajor.setText(empty);
+		partitionMinor.setText(empty);
 	}
-	
+
 	/**
 	 * Clears GPU labels.
 	 */
 	private void clearGraphicsLabels() {
-		gpuModel.setText("");
-		gpuVendor.setText("");
-		gpuOpenGLVersion.setText("");
+		gpuModel.setText(empty);
+		gpuVendor.setText(empty);
+		gpuOpenGLVersion.setText(empty);
 	}
-	
+
 	private void clearMonitorsLabels() {
-		totalMonitors.setText("");
-		monitorTextArea.setText("");
+		totalMonitors.setText(empty);
+		monitorTextArea.setText(empty);
 	}
-	
+
 	/**
 	 * Clears networks labels.
 	 */
 	private void clearNetworkLabels() {
-		networkInterfacesCount.setText("");
-		interfaceName.setText("");
-		interfaceDisplayname.setText("");
-		interfaceIPv4.setText("");
-		interfaceIPv6.setText("");
-		interfaceMAC.setText("");
-		interfaceMTU.setText("");
+		networkInterfacesCount.setText(empty);
+		interfaceName.setText(empty);
+		interfaceDisplayname.setText(empty);
+		interfaceIPv4.setText(empty);
+		interfaceIPv6.setText(empty);
+		interfaceMAC.setText(empty);
+		interfaceMTU.setText(empty);
 	}
-	
+
 	/**
 	 * Clears USB devices labels.
 	 */
 	public void clearUsbDevicesLabels() {
-		usbDevicesCount.setText("");
-		usbDeviceName.setText("");
-		usbDeviceVendor.setText("");
-		usbDeviceVendorID.setText("");
-		usbDeviceProductID.setText("");
-		usbDeviceSerialNumber.setText("");
+		usbDevicesCount.setText(empty);
+		usbDeviceName.setText(empty);
+		usbDeviceVendor.setText(empty);
+		usbDeviceVendorID.setText(empty);
+		usbDeviceProductID.setText(empty);
+		usbDeviceSerialNumber.setText(empty);
 	}
-	
+
 	/**
 	 * Clears about labels.
 	 */
 	private void clearAboutLabels() {
-		aboutVersion.setText("");
-		aboutDeveloper.setText("");
-		aboutDate.setText("");
-		aboutLicense.setText("");
-		aboutMail.setText("");
+		aboutVersion.setText(empty);
+		aboutDeveloper.setText(empty);
+		aboutDate.setText(empty);
+		aboutLicense.setText(empty);
+		aboutMail.setText(empty);
 	}
-	
+
 	/**
 	 * Sets data into Operating System Labels.
 	 */
 	private void setOSLabels() {
-		osManufacturer.setText(os.osManufacturer);
-		osName.setText(os.osName);
-		osVersion.setText(os.osVersion);
-		osArch.setText(os.osArch);
-		osBuild.setText(os.osBuild);
+		osManufacturer.setText(OS.getOsManufacturer());
+		osName.setText(OS.getOsName());
+		osVersion.setText(OS.getOsVersion());
+		osArch.setText(OS.getOsArch());
+		osBuild.setText(OS.getOsBuild());
 	}
-	
+
 	/**
 	 * Sets motherboard labels.
 	 */
 	private void setMotherboardLabels() {
-		mbBrand.setText(mb.mbBrand);
-		mbManufacturer.setText(mb.mbManufacturer);
-		mbModel.setText(mb.mbModel);
-		mbSerialNumber.setText(mb.mbSerialNumber);
-		mbVersion.setText(mb.mbVersion);
+		mbBrand.setText(MB.getMbBrand());
+		mbManufacturer.setText(MB.getMbManufacturer());
+		mbModel.setText(MB.getMbModel());
+		mbSerialNumber.setText(MB.getMbSerialNumber());
+		mbVersion.setText(MB.getMbVersion());
 	}
-	
+
 	/**
 	 * Sets BIOS labels.
 	 */
 	private void setBIOSLabels() {
-		biosManufacturer.setText(bios.biosManufacturer);
-		biosName.setText(bios.biosName);
-		biosVersion.setText(bios.biosVersion);
-		biosReleasedate.setText(bios.biosReleasedate);
+		biosManufacturer.setText(BIOS.getBiosManufacturer());
+		biosName.setText(BIOS.getBiosName());
+		biosVersion.setText(BIOS.getBiosVersion());
+		biosReleasedate.setText(BIOS.getBiosReleasedate());
 	}
-	
+
 	/**
 	 * Sets CPU labels.
 	 */
 	private void setProcessorLabels() {
-		cpuBrand.setText(cpu.cpuBrand);
-		cpuName.setText(cpu.cpuName);
-		cpuFamily.setText(cpu.cpuFamily);
-		cpuModel.setText(cpu.cpuModel);
-		cpuStepping.setText(cpu.cpuStepping);
-		cpuFrequency.setText(cpu.cpuFrequency);
-		cpuArchitecture.setText(cpu.cpuArchitecture);
-		cpuPhysicalCores.setText(cpu.cpuPhysicalCores);
-		cpuLogicalCores.setText(cpu.cpuLogicalCores);
-		cpuID.setText(cpu.cpuID);
+		cpuBrand.setText(CPU.getCpuBrand());
+		cpuName.setText(CPU.getCpuName());
+		cpuFamily.setText(CPU.getCpuFamily());
+		cpuModel.setText(CPU.getCpuModel());
+		cpuStepping.setText(CPU.getCpuStepping());
+		cpuFrequency.setText(CPU.getCpuFrequency());
+		cpuArchitecture.setText(CPU.getCpuArchitecture());
+		cpuPhysicalCores.setText(CPU.getCpuPhysicalCores());
+		cpuLogicalCores.setText(CPU.getCpuLogicalCores());
+		cpuID.setText(CPU.getCpuID());
 	}
-	
+
 	/**
 	 * Sets RAM labels.
 	 */
-	private void setMemoryLabels() {	
-		memoryTotal.setText(ram.memoryTotal);
-		memoryAvailable.setText(ram.memoryAvailable);
-		memorySwapTotal.setText(ram.memorySwapTotal);
-		memorySwapUsed.setText(ram.memorySwapUsed);
+	private void setMemoryLabels() {
+		memoryTotal.setText(RAM.getMemoryTotal());
+		memoryAvailable.setText(RAM.getMemoryAvailable());
+		memorySwapTotal.setText(RAM.getMemorySwapTotal());
+		memorySwapUsed.setText(RAM.getMemorySwapUsed());
 	}
-	
+
 	/**
 	 * Sets drives labels.
 	 */
 	public void setDrivesLabels() {
-		drivesCount.setText(drives.drivesCount);
-		partitionsCount.setText(drives.partitionsCount);
-		driveModel.setText(drives.driveModel);
-		driveSize.setText(drives.driveSize);
-		driveName.setText(drives.driveName);
-		driveSerial.setText(drives.driveSerial);
+		drivesCount.setText(drives.getDrivesCount());
+		partitionsCount.setText(drives.getPartitionsCount());
+		driveModel.setText(drives.getDriveModel());
+		driveSize.setText(drives.getDriveSize());
+		driveName.setText(drives.getDriveName());
+		driveSerial.setText(drives.getDriveSerial());
 	}
-	
+
 	/**
 	 * Sets partitions labels.
 	 */
 	public void setPartitionsLabels() {
-		partitionID.setText(drives.partitionID);
-		partitionMountpoint.setText(drives.partitionMountpoint);
-		partitionSize.setText(drives.partitionSize);
-		partitionUUID.setText(drives.partitionUUID);
-		partitionType.setText(drives.partitionType);
-		partitionMajor.setText(drives.partitionMajor);
-		partitionMinor.setText(drives.partitionMinor);
+		partitionID.setText(drives.getPartitionID());
+		partitionMountpoint.setText(drives.getPartitionMountpoint());
+		partitionSize.setText(drives.getPartitionSize());
+		partitionUUID.setText(drives.getPartitionUUID());
+		partitionType.setText(drives.getPartitionType());
+		partitionMajor.setText(drives.getPartitionMajor());
+		partitionMinor.setText(drives.getPartitionMinor());
 	}
-	
+
 	/**
 	 * Sets GPU labels.
 	 */
 	private void setGraphicsLabels() {
-		gpuModel.setText(gpu.gpuCard);
-		gpuVendor.setText(gpu.gpuVendor);
-		gpuOpenGLVersion.setText(gpu.gpuOpenGLVersion);
+		gpuModel.setText(gpu.getGpuCard());
+		gpuVendor.setText(gpu.getGpuVendor());
+		gpuOpenGLVersion.setText(gpu.getGpuOpenGLVersion());
 	}
-	
+
 	public void setMonitorsLabels() {
-		totalMonitors.setText(monitors.monitorsCount);
-		monitorTextArea.setText(monitors.monitorData);
+		totalMonitors.setText(monitors.getMonitorsCount());
+		monitorTextArea.setText(monitors.getMonitorData());
 	}
-	
+
 	/**
 	 * Sets network interfaces labels.
 	 */
 	public void setNetworkInterfacesLabels() {
-		networkInterfacesCount.setText(net.networkInterfacesCount);
-		interfaceName.setText(net.interfaceName);
-		interfaceDisplayname.setText(net.interfaceDisplayname);
-		interfaceIPv4.setText(net.interfaceIPv4);
-		interfaceIPv6.setText(net.interfaceIPv6);
-		interfaceMAC.setText(net.interfaceMAC);
-		interfaceMTU.setText(net.interfaceMTU);
+		networkInterfacesCount.setText(net.getNetworkInterfacesCount());
+		interfaceName.setText(net.getInterfaceName());
+		interfaceDisplayname.setText(net.getInterfaceDisplayname());
+		interfaceIPv4.setText(net.getInterfaceIPv4());
+		interfaceIPv6.setText(net.getInterfaceIPv6());
+		interfaceMAC.setText(net.getInterfaceMAC());
+		interfaceMTU.setText(net.getInterfaceMTU());
 	}
-	
+
 	/**
 	 * Sets USB devices labels.
 	 */
 	public void setUsbDevicesLabels() {
-		usbDevicesCount.setText(usb.usbDevicesCount);
-		usbDeviceName.setText(usb.usbDeviceName);
-		usbDeviceVendor.setText(usb.usbDeviceVendor);
-		usbDeviceVendorID.setText(usb.usbDeviceVendorID);
-		usbDeviceProductID.setText(usb.usbDeviceProductID);
-		usbDeviceSerialNumber.setText(usb.usbDeviceSerialNumber);
+		usbDevicesCount.setText(usb.getUsbDevicesCount());
+		usbDeviceName.setText(usb.getUsbDeviceName());
+		usbDeviceVendor.setText(usb.getUsbDeviceVendor());
+		usbDeviceVendorID.setText(usb.getUsbDeviceVendorID());
+		usbDeviceProductID.setText(usb.getUsbDeviceProductID());
+		usbDeviceSerialNumber.setText(usb.getUsbDeviceSerialNumber());
 	}
-	
+
 	/**
 	 * Sets about labels.
 	 */
 	public void setAboutLabels() {
-		aboutVersion.setText(about.aboutVersion);
-		aboutDeveloper.setText(about.aboutDeveloper);
-		aboutDate.setText(about.aboutDate);
-		aboutLicense.setText(about.aboutLicense);
-		aboutMail.setText(Xray.DEVELOPER_MAIL);
+		aboutVersion.setText(ABOUT.getAboutVersion());
+		aboutDeveloper.setText(ABOUT.getAboutDeveloper());
+		aboutDate.setText(ABOUT.getAboutDate());
+		aboutLicense.setText(ABOUT.getAboutLicense());
+		aboutMail.setText(Xray.getDeveloperMail());
 	}
 }
