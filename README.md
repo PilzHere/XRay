@@ -8,7 +8,6 @@ Motherboard, BIOS, Processor, Memory, Operating System, Mounted Drives & Partiti
 
 Tested platforms:
 Windows (10) & Linux (Arch & Ubuntu).
-
 But should also work on Mac OS X and Unix (Solaris, FreeBSD).
 
 JAR requires Java installed to run.
