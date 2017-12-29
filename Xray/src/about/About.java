@@ -19,7 +19,7 @@ public class About {
 	public void setAboutData() {
 		setAboutVersion(Xray.getVersion());
 		setAboutDeveloper(Xray.getDeveloper());
-		setAboutDate("2017-12-28");
+		setAboutDate("2017-12-29");
 		String year = getAboutDate().substring(0, 3);
 
 		setAboutLicense("The MIT License (MIT)" + "\n" + "\n" + "Copyright (c) " + year + " " + getAboutDeveloper()

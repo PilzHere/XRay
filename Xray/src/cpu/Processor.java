@@ -18,34 +18,10 @@ public class Processor {
 	 */
 	public void setProcessorData() {
 		setCPUBrand();
-
-		setCpuName(XrayController.SYS_INF.getHardware().getProcessor().getName());
-		setCpuName(XrayController.HELPER.stringIsEmptyOrUnknownOrNull(getCpuName()));
-
-		setCpuFamily(XrayController.SYS_INF.getHardware().getProcessor().getFamily());
-		setCpuFamily(XrayController.HELPER.stringIsEmptyOrUnknownOrNull(getCpuFamily()));
-
-		setCpuModel(XrayController.SYS_INF.getHardware().getProcessor().getModel());
-		setCpuModel(XrayController.HELPER.stringIsEmptyOrUnknownOrNull(getCpuModel()));
-
-		setCpuStepping(XrayController.SYS_INF.getHardware().getProcessor().getStepping());
-		setCpuStepping(XrayController.HELPER.stringIsEmptyOrUnknownOrNull(getCpuStepping()));
-
+		setCpuNameFamilyModelSteppingID();
 		setCPUFreq();
 		setCPUArch();
-
-		String physCores = String
-				.valueOf(XrayController.SYS_INF.getHardware().getProcessor().getPhysicalProcessorCount());
-		setCpuPhysicalCores(physCores);
-		setCpuPhysicalCores(XrayController.HELPER.stringIsEmptyOrUnknownOrNull(getCpuPhysicalCores()));
-
-		String logCores = String
-				.valueOf(XrayController.SYS_INF.getHardware().getProcessor().getLogicalProcessorCount());
-		setCpuLogicalCores(logCores);
-		setCpuLogicalCores(XrayController.HELPER.stringIsEmptyOrUnknownOrNull(getCpuLogicalCores()));
-
-		setCpuID(XrayController.SYS_INF.getHardware().getProcessor().getProcessorID());
-		setCpuID(XrayController.HELPER.stringIsEmptyOrUnknownOrNull(getCpuID()));
+		setCpuCores();
 
 		// Unused / not sure about these yet...
 		// System.out.println("CPU Load: " +
@@ -66,6 +42,35 @@ public class Processor {
 		// SysInf.getHardware().getProcessor().getSystemCpuLoadTicks());
 		// System.out.println("System load average: " +
 		// SysInf.getHardware().getProcessor().getSystemLoadAverage());
+	}
+
+	private void setCpuCores() {
+		String physCores = String
+				.valueOf(XrayController.SYS_INF.getHardware().getProcessor().getPhysicalProcessorCount());
+		setCpuPhysicalCores(physCores);
+		setCpuPhysicalCores(XrayController.HELPER.stringIsEmptyOrUnknownOrNull(getCpuPhysicalCores()));
+
+		String logCores = String
+				.valueOf(XrayController.SYS_INF.getHardware().getProcessor().getLogicalProcessorCount());
+		setCpuLogicalCores(logCores);
+		setCpuLogicalCores(XrayController.HELPER.stringIsEmptyOrUnknownOrNull(getCpuLogicalCores()));
+	}
+
+	private void setCpuNameFamilyModelSteppingID() {
+		setCpuName(XrayController.SYS_INF.getHardware().getProcessor().getName());
+		setCpuName(XrayController.HELPER.stringIsEmptyOrUnknownOrNull(getCpuName()));
+
+		setCpuFamily(XrayController.SYS_INF.getHardware().getProcessor().getFamily());
+		setCpuFamily(XrayController.HELPER.stringIsEmptyOrUnknownOrNull(getCpuFamily()));
+
+		setCpuModel(XrayController.SYS_INF.getHardware().getProcessor().getModel());
+		setCpuModel(XrayController.HELPER.stringIsEmptyOrUnknownOrNull(getCpuModel()));
+
+		setCpuStepping(XrayController.SYS_INF.getHardware().getProcessor().getStepping());
+		setCpuStepping(XrayController.HELPER.stringIsEmptyOrUnknownOrNull(getCpuStepping()));
+		
+		setCpuID(XrayController.SYS_INF.getHardware().getProcessor().getProcessorID());
+		setCpuID(XrayController.HELPER.stringIsEmptyOrUnknownOrNull(getCpuID()));
 	}
 
 	/**

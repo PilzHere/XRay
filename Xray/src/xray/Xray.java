@@ -19,7 +19,7 @@ public class Xray extends Application {
 
 	private static final int VERS1 = 1;
 	private static final int VERS2 = 1;
-	private static final int VERS3 = 1;
+	private static final int VERS3 = 2;
 	private static final String VERSION = VERS1 + "." + VERS2 + "." + VERS3;
 	private static final String APP_TITLE_VERSION = APP_TITLE + " " + VERSION;
 
