@@ -16,9 +16,9 @@ Motherboard, BIOS, Processor, Memory, Operating System, Mounted Drives & Partiti
 
 ## Tested platforms:
 
-Windows (10)
+* Windows (10)
 
-Linux (Arch, Manjaro & Ubuntu) _**Linux requires OpenJFX installed.**_
+* Linux (Arch, Manjaro & Ubuntu) _**Linux requires OpenJFX installed.**_
 
 Should work but not tested on Mac OS X and Unix (Solaris, FreeBSD).
 
