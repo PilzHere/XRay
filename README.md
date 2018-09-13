@@ -31,8 +31,8 @@ JAR requires Java installed to run.
 Bulit with: jdk1.8.0_144.
 Dependencies:
 
-* JavaFX SDK
+* [JavaFX SDK](http://www.oracle.com/technetwork/java/javafx/install-javafx-sdk-1-2-139156.html)
 
-* Oshi-core-3.4.4 (with respective dependencies)
+* [Oshi-core-3.4.4](https://github.com/oshi/oshi) (with respective dependencies)
 
-* LWJGL 3.1.5 build 1 (Preset: Minimal OpenGL).
+* [LWJGL 3.1.5 build 1](https://github.com/LWJGL/lwjgl3) (Preset: Minimal OpenGL).
