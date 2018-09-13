@@ -11,7 +11,7 @@ XRay can read data from:
 Motherboard, BIOS, Processor, Memory, Operating System, Mounted Drives & Partitions, Graphics Processor, Monitors, Network Interfaces and USB Devices.
 
 Tested platforms:
-Windows (10) & Linux (Arch & Ubuntu).
+Windows (10) & Linux (Arch, Manjaro & Ubuntu. Requires OpenJFX).
 But should also work on Mac OS X and Unix (Solaris, FreeBSD).
 
 -Run-
