@@ -13,10 +13,12 @@ XRay can read data from:
 Motherboard, BIOS, Processor, Memory, Operating System, Mounted Drives & Partitions, Graphics Processor, Monitors, Network Interfaces and USB Devices.
 
 **Tested platforms:**
-Windows (10) & Linux (Arch, Manjaro & Ubuntu).
-But should also work on Mac OS X and Unix (Solaris, FreeBSD).
 
-**Linux requires OpenJFX.**
+Windows (10)
+
+Linux (Arch, Manjaro & Ubuntu) _**Linux requires OpenJFX installed.**_
+
+Should work but not tested on Mac OS X and Unix (Solaris, FreeBSD).
 
 **Run:**
 JAR requires Java installed to run.
