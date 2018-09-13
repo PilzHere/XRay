@@ -24,5 +24,11 @@ Should work but not tested on Mac OS X and Unix (Solaris, FreeBSD).
 JAR requires Java installed to run.
 
 **Build:**
-JDK built with: jdk1.8.0_144.
-Dependencies: JavaFX SDK, Oshi-core-3.4.4 (with respective dependencies) and LWJGL 3.1.5 build 1 (Preset: Minimal OpenGL).
+Bult with: jdk1.8.0_144.
+Dependencies:
+
+JavaFX SDK
+
+Oshi-core-3.4.4 (with respective dependencies)
+
+LWJGL 3.1.5 build 1 (Preset: Minimal OpenGL).
