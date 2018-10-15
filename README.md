@@ -5,7 +5,7 @@ XRay is an application used to show information about hardware and software inst
 **Latest stable release is 1.1.2.**
 
 
-### XRay gathers data about
+### XRay gathers data from
 * Motherboard
 * BIOS
 * Processor
@@ -27,7 +27,7 @@ XRay is an application used to show information about hardware and software inst
 Should work but not tested on Mac OS X and Unix (Solaris, FreeBSD).
 
 
-## Build:
+## Built with
 JDK: 1.8.0_144.
 
 Dependencies:
