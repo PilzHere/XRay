@@ -4,7 +4,7 @@ XRay is an application used to show information about hardware and software inst
 
 **Latest stable release is 1.1.2.**
 
-![](https://github.com/PilzHere/PZMediaPlayer/blob/master/pzMediaPlayerFront.png?raw=true)
+![](https://github.com/PilzHere/XRay/blob/master/Xray/xrayReadme.png?raw=true)
 
 ### XRay gathers data from
 * Motherboard
