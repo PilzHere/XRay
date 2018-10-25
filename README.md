@@ -16,7 +16,7 @@ XRay is an application used to show information about hardware and software inst
 * Graphics Processor
 * Monitors
 * Network Interfaces
-* USB Devices.
+* USB Devices
 
 
 ## Tested platforms
